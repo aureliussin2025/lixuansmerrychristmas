@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Christmas with You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top left, #ffb7d9 0%, #ffffff 40%, #c7ffd8 100%);
+      color: #333;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 18px;
+      padding: 24px 22px 26px;
+      max-width: 380px;
+      width: 90%;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      border: 1px solid rgba(255, 192, 203, 0.45);
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      background: #f4f4f4;
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+    }
+
+    h1, h2 {
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .sub {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 18px;
+      line-height: 1.45;
+    }
+
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(255, 105, 180, 0.08);
+      color: #b33959;
+      margin-bottom: 14px;
+    }
+
+    .date-pill span.icon {
+      font-size: 14px;
+    }
+
+    .buttons-wrapper {
+      position: relative;
+      height: 40px;
+      margin-top: 8px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+      white-space: nowrap;
+    }
+
+    #yesBtn {
+      background: linear-gradient(135deg, #ff7fa6, #ffb3d1);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(255, 126, 167, 0.4);
+    }
+
+    #yesBtn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(255, 126, 167, 0.55);
+    }
+
+    #noBtn {
+      background: #f5f5f5;
+      color: #666;
+    }
+
+    #noBtn:hover {
+      background: #eee;
+    }
+
+    .note {
+      font-size: 10px;
+      color: #999;
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .plan {
+      margin-top: 8px;
+      text-align: left;
+      font-size: 13px;
+      color: #444;
+      line-height: 1.5;
+      animation: fadeIn 0.35s ease-out;
+    }
+
+    .plan ul {
+      list-style: none;
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .plan ul li::before {
+      content: "•";
+      margin-right: 6px;
+      color: #ff7fa6;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .closing {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .footer {
+      margin-top: 14px;
+      font-size: 11px;
+      color: #888;
+    }
+
+    .heart {
+      color: #ff5c93;
+      font-size: 12px;
+    }
+
+    @media (max-width: 420px) {
+      .card {
+        padding: 22px 18px 24px;
+      }
+      h1, h2 {
+        font-size: 20px;
+      }
+      .sub {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <!-- PAGE 1 -->
+    <div id="page1">
+      <div class="tag">invite · christmas</div>
+
+      <p class="sub" style="margin-bottom: 12px; font-weight: 500;">
+        To the prettiest, smartest, funniest, most charming girl I know:
+      </p>
+
+      <h1>Can I borrow you<br>on 25 December?</h1>
+
+      <p class="sub">
+        Orchard lights, good food (I hope), and me trying my best to make your Christmas feel a little more special.
+      </p>
+
+      <div class="date-pill">
+        <span class="icon">🎄</span>
+        <span>25 Dec · Orchard</span>
+      </div>
+
+      <p class="sub" style="margin-bottom: 10px;">
+        Will you go on a Christmas date with me?<br>
+      </p>
+
+      <div class="buttons-wrapper">
+        <div class="buttons">
+          <button id="yesBtn">Yes</button>
+          <button id="noBtn">No</button>
+        </div>
+      </div>
+
+      <div class="note">
+        (No button is for decoration only.)
+      </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div id="page2" class="hidden">
+      <div class="tag">plan · christmas</div>
+      <h2>🎄 Christmas Date Plan 🎄</h2>
+
+      <p class="sub">
+        I’d love to see <b>you</b> for Christmas — 😄  
+        Here’s my brilliant plan:
+      </p>
+
+      <div class="plan">
+        <ul>
+          <li>Meet 6pm at NTU</li>
+          <li>Dinner at Tanuki Raw @ Orchard Central</li>
+          <li>Photobooth (if we’re feeling cute)</li>
+          <li>Christmas Lights Walk</li>
+          <li>Ice Cream Stop</li>
+        </ul>
+
+        <p class="closing">
+          I’m really looking forward to spending Christmas with you ✨<br><br>
+          If you want to add or change anything, just tell me —<br>
+          I just want to be with you.
+        </p>
+      </div>
+
+      <div class="footer">
+        From you very very handsome boyfriend (to be).
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const yesBtn = document.getElementById("yesBtn");
+      const noBtn = document.getElementById("noBtn");
+      const page1 = document.getElementById("page1");
+      const page2 = document.getElementById("page2");
+
+      yesBtn.addEventListener("click", () => {
+        page1.classList.add("hidden");
+        page2.classList.remove("hidden");
+      });
+
+      // Runaway NO button
+      let hoverCount = 0;
+
+      function moveNoButton() {
+        hoverCount++;
+        const maxShift = 90;
+        const x = (Math.random() - 0.5) * maxShift;
+        const y = (Math.random() - 0.5) * maxShift;
+        noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        if (hoverCount > 5) {
+          noBtn.innerText = "cannot";
+        }
+      }
+
+      noBtn.addEventListener("mouseenter", moveNoButton);
+
+      noBtn.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        moveNoButton();
+      });
+
+      noBtn.addEventListener("click", () => {
+        noBtn.innerText = "nice try";
+      });
+    });
+  </script>
+
+</body>
+</html>
